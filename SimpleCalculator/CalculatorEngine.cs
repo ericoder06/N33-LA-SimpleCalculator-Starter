@@ -42,7 +42,7 @@ namespace SimpleCalculator
         {
         string operation = "";
             switch (argOperation.ToLower())
-            {
+            { 
                 
                 case "+":
             case "add":
