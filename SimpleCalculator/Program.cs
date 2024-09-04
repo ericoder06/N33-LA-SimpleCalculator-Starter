@@ -19,7 +19,7 @@ namespace SimpleCalculator
                 string operation = Console.ReadLine();
 
                 double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
-
+                
                 Console.WriteLine(result);
 
             } catch (Exception ex)

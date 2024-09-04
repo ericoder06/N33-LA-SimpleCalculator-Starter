@@ -1,4 +1,5 @@
 ﻿using System;
+using CalcLibrary;
 
 namespace SimpleCalculator
 {
@@ -13,23 +14,23 @@ namespace SimpleCalculator
             {
                 case "+":
                 case "add":
-                    result = argFirstNumber + argSecondNumber;
+                   result = CalcUtilities.add(argFirstNumber, argSecondNumber);
 
                     break;
                 case "-":
                 case "substract":
                     
-                        result = argFirstNumber - argSecondNumber;
+                        result = CalcUtilities.subtract(argFirstNumber, argSecondNumber);
                     break;
 
                 case "*":
                 case "multiply":
-                    result = argFirstNumber * argSecondNumber;
+                    result = CalcUtilities.multiply(argFirstNumber, argSecondNumber);
                     break;
 
                 case "/":
                 case "divide":
-                result = argFirstNumber / argSecondNumber;
+                  result = CalcUtilities.divide(argFirstNumber, argSecondNumber);
                     break;
 
 
