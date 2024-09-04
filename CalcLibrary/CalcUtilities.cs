@@ -15,5 +15,5 @@ namespace CalcLibrary
         { return a - b; }
 
         
-    }
+    } 
 }
