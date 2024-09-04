@@ -14,13 +14,13 @@ namespace SimpleCalculator
             {
                 case "+":
                 case "add":
-                   result = CalcUtilities.add(argFirstNumber, argSecondNumber);
+                    result = CalcUtilities.add(argFirstNumber, argSecondNumber);
 
                     break;
                 case "-":
-                case "substract":
-                    
-                        result = CalcUtilities.subtract(argFirstNumber, argSecondNumber);
+                case "sub":
+
+                    result = CalcUtilities.subtract(argFirstNumber, argSecondNumber);
                     break;
 
                 case "*":
@@ -30,7 +30,7 @@ namespace SimpleCalculator
 
                 case "/":
                 case "divide":
-                  result = CalcUtilities.divide(argFirstNumber, argSecondNumber);
+                    result = CalcUtilities.divide(argFirstNumber, argSecondNumber);
                     break;
 
 
@@ -38,5 +38,30 @@ namespace SimpleCalculator
             }
             return result;
         }
+        public string calculatorVocab(string argOperation)
+        {
+        string operation = "";
+            switch (argOperation.ToLower())
+            {
+                
+                case "+":
+            case "add":
+                operation = "plus";
+                break;
+            case "-":
+            case "sub":
+                operation = "minus";
+                break;
+            case "*":
+            case "multiply":
+                operation = "times";
+                break;
+            case "/":
+            case "divide":
+                operation = "divided by";
+                break;
+            }
+            return operation;
+        } 
     }
 }
