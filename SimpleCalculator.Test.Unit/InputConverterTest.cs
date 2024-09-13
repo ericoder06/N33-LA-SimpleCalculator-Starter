@@ -54,7 +54,7 @@ namespace SimpleCalculator.Test.Unit
             string inputNumber = "0";
             double convertedNumber = _inputConverter.ConvertInputToNumeric(inputNumber);
        
-            Assert.AreEqual(0, convertedNumber.Value);
+            Assert.AreEqual(0, convertedNumber);
         }
     }
 }
