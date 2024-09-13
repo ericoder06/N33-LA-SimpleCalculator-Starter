@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,10 @@ namespace CalcLibrary
             return a * b; }
 
         public static double divide( double a, double b ) {
+            if (b == 0)
+            {
+                throw new DivideByZeroException("You cannot divide by 0. Error");           
+                    }
             return a / b; }
 
     } 
