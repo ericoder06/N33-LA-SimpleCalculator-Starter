@@ -37,6 +37,10 @@ namespace SimpleCalculator
                     case "divided by":
                         result = CalcUtilities.divide(argFirstNumber, argSecondNumber);
                         break;
+                    case "%":
+                    case "mod":
+                        result = argFirstNumber % argSecondNumber;
+                        break;
 
 
 
@@ -72,6 +76,10 @@ namespace SimpleCalculator
                     case "divide":
                         operation = "divided by";
                         break;
+                    case "%":
+                case "mod":
+                    operation = "modulus";
+                    break;
 
                 default:
                     {
