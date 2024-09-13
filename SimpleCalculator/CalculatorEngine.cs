@@ -8,48 +8,64 @@ namespace SimpleCalculator
         public double Calculate(string argOperation, double argFirstNumber, double argSecondNumber)
         {
             double result = 0;
+            bool validOperation = false;
 
-            try
+            while (!validOperation)
             {
-                switch (argOperation.ToLower())
+                try
                 {
-                    case "+":
-                    case "add":
-                    case "plus":
-                        result = CalcUtilities.add(argFirstNumber, argSecondNumber);
+                    switch (argOperation.ToLower())
+                    {
+                        case "+":
+                        case "add":
+                        case "plus":
+                            result = CalcUtilities.add(argFirstNumber, argSecondNumber);
+                            validOperation = true;
+                            break;
+                        case "-":
+                        case "sub":
+                        case "minus":
 
-                        break;
-                    case "-":
-                    case "sub":
-                    case "minus":
+                            result = CalcUtilities.subtract(argFirstNumber, argSecondNumber);
+                            validOperation = true;
+                            break;
+                            
 
-                        result = CalcUtilities.subtract(argFirstNumber, argSecondNumber);
-                        break;
+                        case "*":
+                        case "multiply":
+                        case "times":
+                            result = CalcUtilities.multiply(argFirstNumber, argSecondNumber);
+                            validOperation = true;
+                            break;
+                            
+                        case "/":
+                        case "divide":
+                        case "divided by":
+                            result = CalcUtilities.divide(argFirstNumber, argSecondNumber);
+                            validOperation = true;
+                            break;
+                        case "%":
+                        case "mod":
+                            result = argFirstNumber % argSecondNumber;
+                            validOperation = true;
+                            break;
 
-                    case "*":
-                    case "multiply":
-                    case "times":
-                        result = CalcUtilities.multiply(argFirstNumber, argSecondNumber);
-                        break;
-
-                    case "/":
-                    case "divide":
-                    case "divided by":
-                        result = CalcUtilities.divide(argFirstNumber, argSecondNumber);
-                        break;
-                    case "%":
-                    case "mod":
-                        result = argFirstNumber % argSecondNumber;
-                        break;
+                        default:
+                            Console.Write("Invalid operation. Please enter a valid operation (+, -, *, /, %) or (add, minus, multiply, divide, modulus):");
+                            argOperation = Console.ReadLine();
+                            validOperation = false;
+                            break;
 
 
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred. Error: " + ex.Message);
 
                 }
             }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Specified operation is not recognized. Error", ex);
-            }
+            
             return result;
         }
 
@@ -81,10 +97,7 @@ namespace SimpleCalculator
                     operation = "modulus";
                     break;
 
-                default:
-                    {
-                        throw new ArgumentException("Invalid operation.");
-                    }
+               
              
             }
                 return operation;

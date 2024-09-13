@@ -1,5 +1,7 @@
 ﻿using CalcLibrary;
 using System;
+using System.Reflection.Emit;
+
 
 namespace SimpleCalculator
 {
@@ -19,24 +21,19 @@ namespace SimpleCalculator
                 "1. First Number \n 2. Second Number \n 3. Operation");
                 Console.WriteLine("\nPress Enter to start.");
                 Console.ReadLine(); 
-                
-                Console.Write("Please enter your first Number: ");
+             
+              
+         
                
-                    double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                double firstNumber = inputConverter.ConvertInputToNumeric( "Please enter your first Number: ");
 
-                if (firstNumber == null)
-                {
-                    throw new ArgumentException("Expected a numeric value. Error");
+               
+               
+                double secondNumber = inputConverter.ConvertInputToNumeric(  "Please enter your second Number: ");
+               
 
-                }
-                Console.Write("Please enter your second Number: ");
-                double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                if (secondNumber == null)
-                {
-                    throw new ArgumentException("Expected a numeric value. Error");
 
-                }
-                Console.Write("Please enter the Operation needed: ");
+                Console.Write("Please enter the operation you would like to perform: ");
                 string operation = Console.ReadLine();
                 
 
@@ -51,5 +48,7 @@ namespace SimpleCalculator
             }
 
         }
+       
+
     }
 }

@@ -1,21 +1,26 @@
 ﻿using System;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SimpleCalculator
 {
     public class InputConverter
     {
-        public double ConvertInputToNumeric(string argTextInput)
+        public double ConvertInputToNumeric(string text)
         {
-
-
-            if (double.TryParse(argTextInput, out double numericValue))
+            double numericValue;
+            while (true)
             {
-                return numericValue;
-            }
-            else
-            {
+                Console.Write(text);
+                string argTextInput = Console.ReadLine(); 
+                if (double.TryParse(argTextInput, out numericValue))
+                {
+                    return numericValue;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a numeric value.");
 
-                throw new ArgumentException("Input is not a valid number.");
+                }
             }
         }
     }
