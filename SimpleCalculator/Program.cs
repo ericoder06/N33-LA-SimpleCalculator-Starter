@@ -24,21 +24,16 @@ namespace SimpleCalculator
              
               
          
-               
+                // Calculation
                 double firstNumber = inputConverter.ConvertInputToNumeric( "Please enter your first Number: ");
-
-               
-               
                 double secondNumber = inputConverter.ConvertInputToNumeric(  "Please enter your second Number: ");
-               
-
-
                 Console.Write("Please enter the operation you would like to perform: ");
                 string operation = Console.ReadLine();
-                
 
+                // Perform the calculation
                 double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
-                 
+
+                // Output the result
                 Console.WriteLine(String.Format("The value {0:0.00##} {1} the value of {2:0.00##} is equal to {3:0.00##}", firstNumber, calculatorEngine.calculatorVocab(operation.ToLower()), secondNumber, result));
 
             } catch (Exception ex)

@@ -10,6 +10,7 @@ namespace SimpleCalculator
             double numericValue;
             while (true)
             {
+
                 Console.Write(text);
                 string argTextInput = Console.ReadLine(); 
                 if (double.TryParse(argTextInput, out numericValue))
