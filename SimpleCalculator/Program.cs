@@ -21,10 +21,20 @@ namespace SimpleCalculator
                 Console.ReadLine();
                 Console.Write("Please enter your first Number: ");
                 double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                if (firstNumber == null) {
+                    throw new ArgumentException("Expected a numeric value. Error");
+              
+                }
                 Console.Write("Please enter your second Number: ");
                 double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                if (secondNumber == null)
+                {
+                    throw new ArgumentException("Expected a numeric value. Error");
+
+                }
                 Console.Write("Please enter the Operation needed: ");
                 string operation = Console.ReadLine();
+                
 
                 double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
                  
@@ -32,7 +42,7 @@ namespace SimpleCalculator
 
             } catch (Exception ex)
             {
-                // Normally, we'd log this error to a file.
+               
                 Console.WriteLine(ex.Message);
             }
 

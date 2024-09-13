@@ -6,15 +6,16 @@ namespace SimpleCalculator
     {
         public double ConvertInputToNumeric(string argTextInput)
         {
-            if(!double.TryParse(argTextInput, out double convertedNumber))
+            if (double.TryParse(argTextInput, out double numericValue))
             {
-                throw new ArgumentException("Expected a numeric value. Error");
+                return numericValue;
             }
+            else
+            {
 
-            double numericValue;
-            bool parsing = double.TryParse(argTextInput, out numericValue);
-
-            return numericValue;
+                throw new ArgumentException("Input is not a valid number.");
+            }
         }
     }
 }
+
